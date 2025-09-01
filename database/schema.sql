@@ -164,3 +164,101 @@ CREATE TRIGGER update_users_updated_at BEFORE UPDATE ON users
 
 CREATE TRIGGER update_prompt_templates_updated_at BEFORE UPDATE ON prompt_templates
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Media assets table for file metadata tracking
+CREATE TABLE media_assets (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+    filename VARCHAR(255) NOT NULL,
+    original_filename VARCHAR(255) NOT NULL,
+    file_type VARCHAR(50) NOT NULL CHECK (file_type IN ('image', 'video', 'audio')),
+    mime_type VARCHAR(100) NOT NULL,
+    file_size_bytes INTEGER NOT NULL,
+    storage_path TEXT NOT NULL,
+    storage_bucket VARCHAR(100) NOT NULL DEFAULT 'user-uploads',
+    upload_session_id UUID,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    expires_at TIMESTAMP WITH TIME ZONE -- For temporary uploads
+);
+
+-- Products table for product library management
+CREATE TABLE products (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(100) NOT NULL CHECK (category IN ('physical_product', 'software', 'service', 'brand')),
+    description TEXT,
+    key_features JSONB DEFAULT '[]'::jsonb,
+    target_audience TEXT,
+    price_point VARCHAR(50) CHECK (price_point IN ('budget', 'mid-range', 'premium', 'luxury')),
+    brand_colors JSONB DEFAULT '[]'::jsonb, -- Array of hex codes
+    brand_voice TEXT,
+    prohibited_contexts JSONB DEFAULT '[]'::jsonb,
+    required_disclaimers JSONB DEFAULT '[]'::jsonb,
+    preferred_models JSONB DEFAULT '[]'::jsonb,
+    quality_tier VARCHAR(50) DEFAULT 'social' CHECK (quality_tier IN ('production', 'social', 'draft')),
+    is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Product assets linking table
+CREATE TABLE product_assets (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    product_id UUID REFERENCES products(id) ON DELETE CASCADE,
+    media_asset_id UUID REFERENCES media_assets(id) ON DELETE CASCADE,
+    asset_type VARCHAR(50) NOT NULL CHECK (asset_type IN ('reference_image', 'logo', 'brand_asset')),
+    display_order INTEGER DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Consistency objects (Character Cards, Scenes, Styles)
+CREATE TABLE consistency_objects (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+    name VARCHAR(255) NOT NULL,
+    object_type VARCHAR(50) NOT NULL CHECK (object_type IN ('character', 'scene', 'style')),
+    description TEXT NOT NULL,
+    locked_attributes JSONB DEFAULT '[]'::jsonb, -- ["blue eyes", "red hair"]
+    style_notes TEXT,
+    reference_prompt TEXT, -- Base prompt for this object
+    is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Consistency object assets
+CREATE TABLE consistency_object_assets (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    consistency_object_id UUID REFERENCES consistency_objects(id) ON DELETE CASCADE,
+    media_asset_id UUID REFERENCES media_assets(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Session assets (Link uploads to enhancement sessions)
+CREATE TABLE session_assets (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    session_id UUID REFERENCES enhancement_sessions(id) ON DELETE CASCADE,
+    media_asset_id UUID REFERENCES media_assets(id) ON DELETE CASCADE,
+    asset_role VARCHAR(50) NOT NULL CHECK (asset_role IN ('reference_image', 'reference_video', 'audio_style')),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Indexes for new tables
+CREATE INDEX idx_media_assets_user_id ON media_assets(user_id);
+CREATE INDEX idx_media_assets_file_type ON media_assets(file_type);
+CREATE INDEX idx_media_assets_expires_at ON media_assets(expires_at);
+CREATE INDEX idx_products_user_id ON products(user_id);
+CREATE INDEX idx_products_category ON products(category);
+CREATE INDEX idx_products_active ON products(is_active);
+CREATE INDEX idx_consistency_objects_user_id ON consistency_objects(user_id);
+CREATE INDEX idx_consistency_objects_type ON consistency_objects(object_type);
+CREATE INDEX idx_consistency_objects_active ON consistency_objects(is_active);
+CREATE INDEX idx_session_assets_session_id ON session_assets(session_id);
+
+-- Triggers for updated_at columns
+CREATE TRIGGER update_products_updated_at BEFORE UPDATE ON products
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_consistency_objects_updated_at BEFORE UPDATE ON consistency_objects
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
