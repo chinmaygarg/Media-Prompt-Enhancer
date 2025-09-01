@@ -36,8 +36,8 @@ A comprehensive prompt enhancement service that transforms basic user inputs int
 ### 1. Clone and Install
 
 ```bash
-git clone <your-repo>
-cd prompt-enhancer
+git clone https://github.com/chinmaygarg/Media-Prompt-Enhancer.git
+cd Media-Prompt-Enhancer
 npm install
 ```
 
@@ -62,6 +62,14 @@ UPSTASH_REDIS_REST_TOKEN=your-upstash-token
 # NextAuth Configuration (optional)
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your-secret-key-min-32-characters
+
+# Rate Limiting Configuration
+# Development limits (10x higher than production)
+RATE_LIMIT_ANALYZE_REQUESTS=200
+RATE_LIMIT_QUESTIONS_REQUESTS=300
+RATE_LIMIT_ENHANCE_REQUESTS=150
+RATE_LIMIT_TEMPLATES_REQUESTS=100
+RATE_LIMIT_WINDOW=3600
 
 # Development Settings
 NODE_ENV=development
