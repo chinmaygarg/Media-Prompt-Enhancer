@@ -211,7 +211,7 @@ export function optimizeTextForModel(
   }
 
   for (const element of textElements) {
-    let optimized = { ...element }
+    const optimized = { ...element }
 
     // Check text length
     if (element.text.length > capabilities.maxTextLength) {

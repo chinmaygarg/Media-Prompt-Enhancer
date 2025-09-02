@@ -207,7 +207,7 @@ export function enhancePromptForModel(
   }
 
   // Model-specific optimizations
-  let modelParams: Record<string, any> = {
+  const modelParams: Record<string, any> = {
     aspect_ratio: config.aspectRatio
   }
 
