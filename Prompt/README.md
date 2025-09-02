@@ -273,14 +273,14 @@ const MODEL_CONFIGS = {
 ```
 
 ### Environment Variables
-Create `.env.local`:
+Create `.env.local` (optional):
 ```env
-# Optional - for future Supabase integration
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-SUPABASE_SERVICE_ROLE_KEY=your_service_key
-
 # Development settings
 NODE_ENV=development
+
+# Custom configuration (optional)
+MAX_FILE_SIZE=50MB
+MAX_FILES_PER_SESSION=10
 ```
 
 ## 🧪 Testing
@@ -341,6 +341,7 @@ npm run build
 - **Frontend**: Next.js 14, React 18, TypeScript 5.0
 - **Styling**: TailwindCSS 3.0, Custom CSS variables
 - **State Management**: React hooks, Context API
+- **Storage**: Local filesystem with session management
 - **Build**: Next.js compiler, ESLint, TypeScript
 
 ### Project Structure
@@ -388,10 +389,11 @@ src/
 
 ### Phase 4: Future Enhancements
 - [ ] User authentication system
-- [ ] Supabase database integration
+- [ ] Database integration (PostgreSQL/Supabase)
 - [ ] Advanced analytics dashboard
 - [ ] API rate limiting
 - [ ] Webhook support
+- [ ] Cloud storage integration
 
 ## 🤝 Contributing
 

@@ -10,11 +10,9 @@ The Media Prompt Enhancer API provides comprehensive prompt enhancement capabili
 
 ## Authentication
 
-Currently, the API is open for development. Production deployment will require authentication tokens.
+Currently, the API is open and uses session-based file management. No authentication is required for development and testing purposes.
 
-```http
-Authorization: Bearer <token>  # Future implementation
-```
+**Future**: Authentication will be added for production deployments.
 
 ## Core Enhancement API
 
@@ -342,7 +340,7 @@ curl -X POST http://localhost:3000/api/upload \
         "id": "file_abc123",
         "filename": "product.jpg",
         "original_name": "product.jpg",
-        "storage_path": "/uploads/session_123/product.jpg",
+        "storage_path": "/tmp/uploads/session_123/product.jpg",
         "file_size_bytes": 2048000,
         "mime_type": "image/jpeg",
         "upload_timestamp": "2025-01-15T10:30:00Z"
@@ -356,6 +354,8 @@ curl -X POST http://localhost:3000/api/upload \
   }
 }
 ```
+
+**Note**: Files are stored locally in `/tmp/uploads/` and are automatically cleaned up after 24 hours.
 
 ## Media Serving API
 

@@ -19,12 +19,12 @@ This guide covers deploying the Media Prompt Enhancer to various platforms inclu
 
 2. **Environment Variables**:
    ```env
-   # Required for Supabase integration (future)
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   SUPABASE_SERVICE_ROLE_KEY=your_service_key
-   
    # Optional: Custom domain
    NEXT_PUBLIC_APP_URL=https://your-domain.com
+   
+   # Optional: Storage configuration  
+   MAX_FILE_SIZE=50MB
+   MAX_FILES_PER_SESSION=10
    ```
 
 3. **Build Settings**:
@@ -260,13 +260,9 @@ NODE_ENV=production
 PORT=3000
 HOSTNAME=0.0.0.0
 
-# Database (Future Supabase Integration)
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-DATABASE_URL=postgresql://user:pass@host:5432/dbname
-
-# Storage (Future)
-SUPABASE_STORAGE_BUCKET=media-assets
+# Storage (Local filesystem)
+UPLOAD_DIR=/app/uploads
+TEMP_DIR=/app/temp
 MAX_FILE_SIZE=50MB
 MAX_FILES_PER_USER=100
 
