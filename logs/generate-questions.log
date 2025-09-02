@@ -1,0 +1,358 @@
+{
+  "timestamp": "2025-09-02T19:56:54.085Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 4,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756843014084_21jpswb8r",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "cache-control": "no-cache",
+      "connection": "keep-alive",
+      "content-length": "174",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T19:56:54.085Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T19:56:54.086Z",
+  "level": "ERROR",
+  "component": "GenerateQuestionsAPI",
+  "event": "config_validation_failed",
+  "input": {
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "missing_fields": {
+      "outputType": false,
+      "platform": false,
+      "style": true,
+      "aspectRatio": false,
+      "qualityTier": false
+    }
+  },
+  "error": "Missing required config fields",
+  "sessionId": "generate_1756843014084_21jpswb8r"
+}
+
+{
+  "timestamp": "2025-09-02T20:02:19.075Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 4,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756843339073_cmuy5a4k",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "cache-control": "no-cache",
+      "connection": "keep-alive",
+      "content-length": "174",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T20:02:19.075Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T20:02:19.076Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "bags",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "sessionId": "generate_1756843339073_cmuy5a4k"
+}
+
+{
+  "timestamp": "2025-09-02T20:02:19.076Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 4,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "style",
+      "style",
+      "content",
+      "composition"
+    ],
+    "reasoning_count": 2,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 3
+  },
+  "sessionId": "generate_1756843339073_cmuy5a4k",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "composition_focus",
+        "question": "What should be the main focal point?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "composition",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T20:06:00.129Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 4,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756843560129_5eo6t0x45",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "cache-control": "no-cache",
+      "connection": "keep-alive",
+      "content-length": "174",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T20:06:00.129Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T20:06:00.129Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "bags",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "sessionId": "generate_1756843560129_5eo6t0x45"
+}
+
+{
+  "timestamp": "2025-09-02T20:06:00.130Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 4,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "style",
+      "style",
+      "content",
+      "composition"
+    ],
+    "reasoning_count": 2,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 1
+  },
+  "sessionId": "generate_1756843560129_5eo6t0x45",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "composition_focus",
+        "question": "What should be the main focal point?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "composition",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
