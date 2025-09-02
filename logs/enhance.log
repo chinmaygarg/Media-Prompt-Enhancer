@@ -514,3 +514,569 @@
   }
 }
 
+{
+  "timestamp": "2025-09-02T21:11:24.970Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 4,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": false,
+    "context_answers_count": 0,
+    "context_answers_keys": [],
+    "has_session_id": false
+  },
+  "sessionId": "enhance_1756847484970_d6llwuvko",
+  "debug": {
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T21:11:24.972Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 4,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_used": false
+  },
+  "output": {
+    "model_selected": "Ideogram v3",
+    "estimated_cost": 0.008,
+    "primary_prompt_length": 88,
+    "negative_prompt_length": 52,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_text_instructions": false,
+    "has_media_insights": false,
+    "has_context_insights": false,
+    "compatibility_score": 1,
+    "processing_time": 3
+  },
+  "sessionId": "enhance_1756847484970_d6llwuvko",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Matches your social quality requirements",
+        "Excellent text rendering capabilities",
+        "Fast generation time (~2s)",
+        "High reliability (95% success rate)",
+        "Cost-effective pricing ($0.008 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "qwen-image",
+          "name": "Qwen Image",
+          "provider": "Alibaba Cloud",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "high"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 3,
+            "queue_priority": "medium",
+            "reliability_score": 0.92,
+            "consistency_score": 0.85
+          },
+          "pricing": {
+            "cost_per_image": 0.012,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "text_rendering",
+              "multilingual",
+              "detailed_scenes"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "illustrated"
+            ],
+            "platform_optimized": [
+              "general"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": true,
+            "style_transfer": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence"
+            ],
+            "known_issues": [
+              "Occasional text distortion in complex scenes"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-12-01",
+            "api_version": "2.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4",
+          "name": "Imagen 4",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3"
+            ],
+            "max_resolution": "1536x1536",
+            "quality_levels": [
+              "standard",
+              "high",
+              "ultra"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 4,
+            "queue_priority": "medium",
+            "reliability_score": 0.93,
+            "consistency_score": 0.9
+          },
+          "pricing": {
+            "cost_per_image": 0.025,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "photorealistic",
+              "commercial",
+              "high_detail"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "good",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 30,
+              "requests_per_day": 500
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        }
+      },
+      "estimated_generation_time": 2
+    }
+  }
+}
+
+{
+  "timestamp": "2025-09-02T21:22:30.637Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 11,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": false,
+    "context_answers_count": 0,
+    "context_answers_keys": [],
+    "has_session_id": false
+  },
+  "sessionId": "enhance_1756848150637_63qf13jcb",
+  "debug": {
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T21:22:30.640Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 11,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_used": false
+  },
+  "output": {
+    "model_selected": "Qwen Image",
+    "estimated_cost": 0.012,
+    "primary_prompt_length": 59,
+    "negative_prompt_length": 52,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_text_instructions": false,
+    "has_media_insights": false,
+    "has_context_insights": false,
+    "compatibility_score": 1,
+    "processing_time": 4
+  },
+  "sessionId": "enhance_1756848150637_63qf13jcb",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Matches your social quality requirements",
+        "Excellent text rendering capabilities",
+        "Supports multilingual text generation",
+        "Fast generation time (~3s)",
+        "High reliability (92% success rate)",
+        "Cost-effective pricing ($0.012 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4",
+          "name": "Imagen 4",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3"
+            ],
+            "max_resolution": "1536x1536",
+            "quality_levels": [
+              "standard",
+              "high",
+              "ultra"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 4,
+            "queue_priority": "medium",
+            "reliability_score": 0.93,
+            "consistency_score": 0.9
+          },
+          "pricing": {
+            "cost_per_image": 0.025,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "photorealistic",
+              "commercial",
+              "high_detail"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "good",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 30,
+              "requests_per_day": 500
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        },
+        "faster": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        }
+      },
+      "estimated_generation_time": 3
+    }
+  }
+}
+
