@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { 
   selectOptimalModel, 
-  enhancePromptForModel, 
-  enhancePromptWithText,
   calculateEstimatedCost,
   generateVideoSequence,
   formatForExport 
 } from '@/lib/prompt-utils'
+import { PromptEnhancer } from '@/lib/llm/prompt-enhancer'
+import { VideoStorySegmentation } from '@/lib/video/story-segmentation'
+import { ConsistencyAnchorManager } from '@/lib/video/consistency-anchors'
+import { SequentialPromptGenerator } from '@/lib/video/sequential-prompts'
+import { StoryIntelligenceEngine } from '@/lib/video/story-intelligence'
 import { QuestionAnswers } from '@/types/context-questions'
 import { logger } from '@/lib/logger'
 
@@ -49,6 +52,7 @@ interface EnhanceRequest {
 
 export async function POST(request: NextRequest) {
   const startTime = Date.now()
+  let sessionId = 'unknown'
   
   try {
     console.log('🚀 [Enhance API] POST request received')
@@ -56,8 +60,28 @@ export async function POST(request: NextRequest) {
     const body = await request.json() as EnhanceRequest
     const { base_prompt, media_assets = [], text_elements = [], config, context_answers, session_id } = body
     
+    // Enhanced Input Logging - Log sanitized request body
+    console.log('📥 [Enhance API] Request Body Analysis:', {
+      base_prompt: base_prompt?.substring(0, 100) + (base_prompt?.length > 100 ? '...' : ''),
+      base_prompt_length: base_prompt?.length || 0,
+      media_assets_count: media_assets?.length || 0,
+      text_elements_count: text_elements?.length || 0,
+      config: {
+        outputType: config?.outputType,
+        platform: config?.platform,
+        style: config?.style?.substring(0, 50) + (config?.style?.length > 50 ? '...' : ''),
+        duration: config?.duration,
+        aspectRatio: config?.aspectRatio,
+        qualityTier: config?.qualityTier
+      },
+      context_answers_provided: !!context_answers,
+      context_answers_keys: context_answers ? Object.keys(context_answers) : [],
+      has_session_id: !!session_id,
+      request_timestamp: new Date().toISOString()
+    })
+    
     // Create sessionId after extracting session_id from request body
-    const sessionId = session_id || `enhance_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+    sessionId = session_id || `enhance_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
 
     // Log incoming request with detailed context answers analysis
     logger.logEnhance('INFO', 'request_received', {
@@ -114,6 +138,24 @@ export async function POST(request: NextRequest) {
     // Step 1: Select optimal model based on requirements with smart compatibility checking
     const modelSelection = selectOptimalModel(config, media_assets, base_prompt)
     const selectedModel = modelSelection.model
+    const selectedModelCapabilities = modelSelection.selectionResult.selected_model || {
+      id: selectedModel.name.toLowerCase().replace(/\s+/g, '-'),
+      name: selectedModel.name,
+      type: selectedModel.type,
+      provider: 'Unknown',
+      input_requirements: {},
+      output_capabilities: {
+        max_duration: selectedModel.maxDuration || 10,
+        aspect_ratios: ['16:9']
+      },
+      pricing: {
+        cost_per_image: selectedModel.costPerImage || 0,
+        cost_per_second: selectedModel.costPerSecond || 0
+      },
+      classification: {
+        quality_tier: selectedModel.qualityTier
+      }
+    }
     
     console.log('🤖 [Enhance API] Selected model:', selectedModel.name)
     
@@ -128,17 +170,111 @@ export async function POST(request: NextRequest) {
       console.warn('⚠️ [Enhance API] Compatibility warnings:', modelSelection.compatibilityWarnings)
     }
 
-    // Step 2: Enhance the prompt for the selected model (with text support and context)
-    const promptResult = text_elements.length > 0 
-      ? enhancePromptWithText(base_prompt, config, media_assets, selectedModel, text_elements, context_answers)
-      : enhancePromptForModel(base_prompt, config, media_assets, selectedModel, context_answers)
+    // Step 2: Initialize the LLM-powered enhancement system
+    console.log('🤖 [Enhance API] Initializing LLM enhancement system...')
+    const promptEnhancer = new PromptEnhancer()
+    
+    // Step 3: Handle video multi-clip generation for longer content
+    console.log('🎬 [Enhance API] Checking for multi-clip video requirements:', {
+      model_type: selectedModel.type,
+      duration: config.duration,
+      requires_multi_clip: (selectedModel.type === 'video' || selectedModel.type === 'video-audio') && config.duration && config.duration > 15
+    })
+    let videoStoryboard = undefined
+    let consistencyProfile = undefined
+    let enhancedClips = undefined
+    let sequentialPrompts = undefined
+    
+    if ((selectedModel.type === 'video' || selectedModel.type === 'video-audio') && 
+        config.duration && config.duration > 15) {
+      
+      console.log('🎬 [Enhance API] Processing multi-clip video generation')
+      
+      // Initialize video systems
+      const storyIntelligence = new StoryIntelligenceEngine()
+      const videoSegmentation = new VideoStorySegmentation()
+      const consistencyManager = new ConsistencyAnchorManager()
+      const sequentialGenerator = new SequentialPromptGenerator()
+      
+      try {
+        // Analyze story structure
+        const storyAnalysis = await storyIntelligence.analyzeStory({
+          originalPrompt: base_prompt,
+          targetDuration: config.duration,
+          platform: config.platform,
+          contentType: 'narrative'
+        })
+        
+        // Segment video into clips
+        videoStoryboard = await videoSegmentation.segmentVideo({
+          basePrompt: base_prompt,
+          totalDuration: config.duration,
+          selectedModel: selectedModelCapabilities,
+          platform: config.platform,
+          storyType: 'narrative'
+        })
+        
+        // Process consistency anchors
+        const consistencyResult = await consistencyManager.processVideoConsistency(
+          videoStoryboard,
+          selectedModelCapabilities,
+          base_prompt
+        )
+        
+        consistencyProfile = consistencyResult.consistencyProfile
+        enhancedClips = consistencyResult.enhancedClips
+        
+        // Generate sequential prompts
+        sequentialPrompts = await sequentialGenerator.generateSequentialPrompts({
+          storyboard: videoStoryboard,
+          consistencyProfile,
+          enhancedClips,
+          selectedModel: selectedModelCapabilities,
+          basePrompt: base_prompt,
+          platform: config.platform,
+          style: config.style
+        })
+        
+        console.log('✅ [Enhance API] Multi-clip video processing completed')
+        
+      } catch (videoError) {
+        console.warn('⚠️ [Enhance API] Multi-clip processing failed, falling back to single enhancement:', videoError)
+      }
+    }
+    
+    // Step 4: Enhance the primary prompt using LLM system
+    console.log('🔄 [Enhance API] Starting LLM prompt enhancement...')
+    const enhancementContext = {
+      base_prompt: base_prompt,
+      config: config,
+      media_assets: media_assets,
+      selected_model: selectedModelCapabilities,
+      context_answers: context_answers
+    }
+    
+    console.log('📝 [Enhance API] Enhancement Context:', {
+      base_prompt_length: enhancementContext.base_prompt?.length || 0,
+      selected_model_name: enhancementContext.selected_model?.name || 'Unknown',
+      selected_model_type: enhancementContext.selected_model?.type || 'Unknown',
+      has_context_answers: !!enhancementContext.context_answers
+    })
+    
+    const promptResult = await promptEnhancer.enhancePrompt(enhancementContext)
+    
+    console.log('✅ [Enhance API] LLM enhancement completed:', {
+      primary_prompt_length: promptResult?.primary_prompt?.length || 0,
+      negative_prompt_length: promptResult?.negative_prompt?.length || 0,
+      has_model_params: !!(promptResult?.model_specific_params),
+      processing_time: promptResult?.processing_time || 'unknown',
+      quality_score: promptResult?.quality_score || 'unknown'
+    })
 
-    // Step 3: Calculate estimated cost
+    // Step 5: Calculate estimated cost
     const estimatedCost = calculateEstimatedCost(config, selectedModel)
 
-    // Step 4: Generate video sequence if needed
+    // Step 6: Generate legacy video sequence if not using multi-clip system
     let shots = undefined
-    if (selectedModel.type === 'video' || selectedModel.type === 'video-audio') {
+    if ((selectedModel.type === 'video' || selectedModel.type === 'video-audio') && !sequentialPrompts) {
       shots = generateVideoSequence(
         promptResult.primary_prompt,
         config,
@@ -146,24 +282,42 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Step 5: Prepare the response with enhanced model information
+    // Step 7: Prepare the response with enhanced model information
     const enhancedResult = {
       primary_prompt: promptResult.primary_prompt,
       negative_prompt: promptResult.negative_prompt,
       model_selected: selectedModel.name,
       estimated_cost: estimatedCost,
-      model_specific_params: promptResult.model_specific_params,
+      model_specific_params: promptResult.model_specific_params || {},
       ...(shots && { shots }),
-      ...('text_instructions' in promptResult && { 
-        text_instructions: promptResult.text_instructions,
-        text_warnings: (promptResult as any).text_warnings
+      ...(sequentialPrompts && { 
+        video_sequence: {
+          total_clips: sequentialPrompts.totalClips,
+          estimated_total_duration: sequentialPrompts.estimatedTotalDuration,
+          clips: sequentialPrompts.clipPrompts,
+          global_consistency_instructions: sequentialPrompts.globalConsistencyInstructions,
+          sequential_flow: sequentialPrompts.sequentialFlow,
+          quality_validation: sequentialPrompts.qualityValidation
+        }
       }),
-      ...('media_insights' in promptResult && { 
-        media_insights: promptResult.media_insights
+      ...(videoStoryboard && {
+        storyboard: {
+          total_clips: videoStoryboard.totalClips,
+          clips: videoStoryboard.clips,
+          average_clip_length: videoStoryboard.averageClipLength,
+          story_arc: videoStoryboard.storyArc
+        }
       }),
-      ...('context_insights' in promptResult && { 
-        context_insights: promptResult.context_insights
+      ...(consistencyProfile && {
+        consistency_profile: consistencyProfile
       }),
+      // Add LLM enhancement insights
+      enhancement_insights: {
+        quality_improvements: promptResult.enhancement_insights || [],
+        processing_time: promptResult.processing_time,
+        quality_score: promptResult.quality_score,
+        used_prompts: promptResult.used_prompts
+      },
       // Add compatibility and selection information
       model_info: {
         compatibility_score: modelSelection.selectionResult.compatibility?.compatibility_score || 1.0,
@@ -179,12 +333,29 @@ export async function POST(request: NextRequest) {
       data: enhancedResult,
       metadata: {
         session_id,
-        processing_time: Date.now(),
+        processing_time: Date.now() - startTime,
         media_assets_used: media_assets.length,
         model_type: selectedModel.type,
         platform_optimized: config.platform
       }
     }
+
+    // Enhanced Output Logging - Log final response structure
+    console.log('📤 [Enhance API] Final Response Structure:', {
+      success: response.success,
+      data_keys: Object.keys(response.data),
+      primary_prompt_length: response.data.primary_prompt?.length || 0,
+      negative_prompt_length: response.data.negative_prompt?.length || 0,
+      model_selected: response.data.model_selected,
+      estimated_cost: response.data.estimated_cost,
+      has_shots: !!(response.data as any).shots,
+      has_video_sequence: !!(response.data as any).video_sequence,
+      has_storyboard: !!(response.data as any).storyboard,
+      has_consistency_profile: !!(response.data as any).consistency_profile,
+      has_enhancement_insights: !!(response.data as any).enhancement_insights,
+      processing_time_ms: response.metadata.processing_time,
+      response_timestamp: new Date().toISOString()
+    })
 
     // Log successful enhancement with comprehensive output details
     logger.logEnhance('INFO', 'enhancement_completed_successfully', {
@@ -200,17 +371,20 @@ export async function POST(request: NextRequest) {
         negative_prompt_length: enhancedResult.negative_prompt?.length || 0,
         has_shots: !!enhancedResult.shots,
         shots_count: enhancedResult.shots?.length || 0,
-        has_text_instructions: !!(enhancedResult as any).text_instructions,
-        has_media_insights: !!(enhancedResult as any).media_insights,
-        has_context_insights: !!(enhancedResult as any).context_insights,
+        has_video_sequence: !!(enhancedResult as any).video_sequence,
+        video_clips_count: (enhancedResult as any).video_sequence?.total_clips || 0,
+        has_storyboard: !!(enhancedResult as any).storyboard,
+        has_consistency_profile: !!(enhancedResult as any).consistency_profile,
+        has_enhancement_insights: !!(enhancedResult as any).enhancement_insights,
         compatibility_score: enhancedResult.model_info?.compatibility_score,
         processing_time: Date.now() - startTime
       },
       sessionId,
       debug: {
         model_info: enhancedResult.model_info,
-        context_insights: (enhancedResult as any).context_insights,
-        media_insights: (enhancedResult as any).media_insights
+        enhancement_insights: (enhancedResult as any).enhancement_insights,
+        video_sequence: (enhancedResult as any).video_sequence,
+        storyboard: (enhancedResult as any).storyboard
       }
     })
 

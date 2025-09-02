@@ -1080,3 +1080,1947 @@
   }
 }
 
+{
+  "timestamp": "2025-09-02T21:30:11.508Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 11,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "cinematic",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": false,
+    "context_answers_count": 0,
+    "context_answers_keys": [],
+    "has_session_id": false
+  },
+  "sessionId": "enhance_1756848611507_bu5hbb5eh",
+  "debug": {
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T21:30:11.510Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 11,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "cinematic",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_used": false
+  },
+  "output": {
+    "model_selected": "Qwen Image",
+    "estimated_cost": 0.012,
+    "primary_prompt_length": 76,
+    "negative_prompt_length": 52,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_text_instructions": false,
+    "has_media_insights": false,
+    "has_context_insights": false,
+    "compatibility_score": 1,
+    "processing_time": 5
+  },
+  "sessionId": "enhance_1756848611507_bu5hbb5eh",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Matches your social quality requirements",
+        "Excellent text rendering capabilities",
+        "Supports multilingual text generation",
+        "Fast generation time (~3s)",
+        "High reliability (92% success rate)",
+        "Cost-effective pricing ($0.012 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4",
+          "name": "Imagen 4",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3"
+            ],
+            "max_resolution": "1536x1536",
+            "quality_levels": [
+              "standard",
+              "high",
+              "ultra"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 4,
+            "queue_priority": "medium",
+            "reliability_score": 0.93,
+            "consistency_score": 0.9
+          },
+          "pricing": {
+            "cost_per_image": 0.025,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "photorealistic",
+              "commercial",
+              "high_detail"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "good",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 30,
+              "requests_per_day": 500
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        },
+        "faster": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        }
+      },
+      "estimated_generation_time": 3
+    }
+  }
+}
+
+{
+  "timestamp": "2025-09-02T21:31:32.440Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 0,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": false,
+    "context_answers_count": 0,
+    "context_answers_keys": [],
+    "has_session_id": false
+  },
+  "sessionId": "enhance_1756848692440_7kyd1kkxa",
+  "debug": {
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:11:55.292Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 5,
+    "media_assets_count": 0,
+    "text_elements_count": 2,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": true,
+    "context_answers_count": 5,
+    "context_answers_keys": [
+      "environment_setting",
+      "overall_style",
+      "color_preference",
+      "additional_elements",
+      "composition_focus"
+    ],
+    "has_session_id": true
+  },
+  "sessionId": "session_1756854715272",
+  "debug": {
+    "context_answers": {
+      "environment_setting": "Indoor Studio",
+      "overall_style": "Cinematic",
+      "color_preference": "Vibrant & Saturated",
+      "additional_elements": [
+        "Interesting Textures"
+      ],
+      "composition_focus": "Rule of Thirds"
+    },
+    "media_assets_details": [],
+    "text_elements_details": [
+      {
+        "id": "text_1756854668224_khkrfhhwh",
+        "type": "overlay",
+        "text_length": 5
+      },
+      {
+        "id": "text_1756854681055_vakjfe0sm",
+        "type": "in-video",
+        "text_length": 4
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:23:03.470Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 33,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "cinematic",
+      "aspectRatio": "16:9",
+      "qualityTier": "production"
+    },
+    "context_answers_provided": true,
+    "context_answers_count": 2,
+    "context_answers_keys": [
+      "mood",
+      "colors"
+    ],
+    "has_session_id": false
+  },
+  "sessionId": "enhance_1756855383470_0aaiu2h96",
+  "debug": {
+    "context_answers": {
+      "mood": "peaceful",
+      "colors": "warm"
+    },
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:23:53.890Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 33,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "cinematic",
+      "aspectRatio": "16:9",
+      "qualityTier": "production"
+    },
+    "context_answers_used": true
+  },
+  "output": {
+    "model_selected": "Qwen Image",
+    "estimated_cost": 0.012,
+    "primary_prompt_length": 637,
+    "negative_prompt_length": 989,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_video_sequence": false,
+    "video_clips_count": 0,
+    "has_storyboard": false,
+    "has_consistency_profile": false,
+    "has_enhancement_insights": true,
+    "compatibility_score": 1,
+    "processing_time": 50426
+  },
+  "sessionId": "enhance_1756855383470_0aaiu2h96",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Excellent text rendering capabilities",
+        "Supports multilingual text generation",
+        "Fast generation time (~3s)",
+        "High reliability (92% success rate)",
+        "Cost-effective pricing ($0.012 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4-ultra",
+          "name": "Imagen 4 Ultra",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 3000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "2048x2048",
+            "quality_levels": [
+              "high",
+              "ultra",
+              "maximum"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 8,
+            "queue_priority": "low",
+            "reliability_score": 0.97,
+            "consistency_score": 0.94
+          },
+          "pricing": {
+            "cost_per_image": 0.08,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "maximum_quality",
+              "commercial",
+              "print_ready"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true,
+            "upscaling": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 20,
+              "requests_per_day": 300
+            },
+            "known_issues": [
+              "Higher costs",
+              "Longer generation times"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        },
+        "faster": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        }
+      },
+      "estimated_generation_time": 3
+    },
+    "enhancement_insights": {
+      "quality_improvements": [
+        "The prompt is too generic for production quality and the 'cinematic' style request.  It lacks the specificity required to generate a truly compelling image.  While the AI can interpret 'beautiful,' the output will likely be unoriginal and lack artistic direction.",
+        "Adding details like specific colors, mountain types, and foreground elements will drastically improve the image quality and align it with the 'cinematic' style.",
+        "Consider specifying a lens type or camera properties for a more cinematic feel (e.g., wide-angle lens, shallow depth of field).",
+        "'Beautiful' was already implied by the sunset and mountain range, so it was omitted to avoid redundancy. The 'peaceful' mood and 'warm' colors were integrated directly into the descriptive language of the prompt.  Specific details were added to address the missing elements, enhancing the creative potential without over-specifying. The 16:9 aspect ratio is a common cinematic choice, fitting the landscape content type. Wildflowers were chosen as foreground elements to complement the warm color palette and peaceful mood.",
+        "Qwen Image excels at detailed scenes and text rendering, thus the detailed description of the scene and emphasis on specific colors should improve the output.",
+        "The 'low vantage point' instruction leverages the model's capability to understand and generate perspective.",
+        "While 'soft, diffused lighting' isn't a specific keyword, Qwen Image is generally good at handling lighting nuances.",
+        "The 16:9 aspect ratio is explicitly stated for proper framing.",
+        "The consistency anchors will be helpful if this prompt is used as a starting point for variations or animations.",
+        "Leveraging community hashtags to increase visibility and reach.",
+        "Incorporating open-ended questions to spark conversation and encourage user-generated content.",
+        "Using emotive language and visuals to create a sense of wonder and inspire sharing.",
+        "Focusing on relatability and personal connection to foster a sense of community.",
+        "Maintaining a balance between artistic description and engagement-focused elements to ensure high-quality output.",
+        "Strong creative vision and artistic direction.",
+        "Good use of evocative language and imagery.",
+        "Effective use of hashtags for context and discoverability.",
+        "Engaging questions encourage interaction and deeper reflection.",
+        "Minor redundancy detected.",
+        "Slight improvement potential in technical specification."
+      ],
+      "processing_time": 50411,
+      "quality_score": 8.5,
+      "used_prompts": [
+        "content_analyzer",
+        "context_integrator",
+        "model_optimizer",
+        "platform_optimizer",
+        "quality_validator"
+      ]
+    }
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:24:54.984Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 3,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": true,
+    "context_answers_count": 5,
+    "context_answers_keys": [
+      "environment_setting",
+      "overall_style",
+      "color_preference",
+      "additional_elements",
+      "composition_focus"
+    ],
+    "has_session_id": true
+  },
+  "sessionId": "session_1756855494834",
+  "debug": {
+    "context_answers": {
+      "environment_setting": "Indoor Studio",
+      "overall_style": "Cinematic",
+      "color_preference": "Muted & Subtle",
+      "additional_elements": [
+        "Dynamic Movement"
+      ],
+      "composition_focus": "Dynamic Diagonal"
+    },
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:25:41.036Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_used": true
+  },
+  "output": {
+    "model_selected": "Ideogram v3",
+    "estimated_cost": 0.008,
+    "primary_prompt_length": 313,
+    "negative_prompt_length": 336,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_video_sequence": false,
+    "video_clips_count": 0,
+    "has_storyboard": false,
+    "has_consistency_profile": false,
+    "has_enhancement_insights": true,
+    "compatibility_score": 1,
+    "processing_time": 46053
+  },
+  "sessionId": "session_1756855494834",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Matches your social quality requirements",
+        "Excellent text rendering capabilities",
+        "Fast generation time (~2s)",
+        "High reliability (95% success rate)",
+        "Cost-effective pricing ($0.008 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "qwen-image",
+          "name": "Qwen Image",
+          "provider": "Alibaba Cloud",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "high"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 3,
+            "queue_priority": "medium",
+            "reliability_score": 0.92,
+            "consistency_score": 0.85
+          },
+          "pricing": {
+            "cost_per_image": 0.012,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "text_rendering",
+              "multilingual",
+              "detailed_scenes"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "illustrated"
+            ],
+            "platform_optimized": [
+              "general"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": true,
+            "style_transfer": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence"
+            ],
+            "known_issues": [
+              "Occasional text distortion in complex scenes"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-12-01",
+            "api_version": "2.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4-ultra",
+          "name": "Imagen 4 Ultra",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 3000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "2048x2048",
+            "quality_levels": [
+              "high",
+              "ultra",
+              "maximum"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 8,
+            "queue_priority": "low",
+            "reliability_score": 0.97,
+            "consistency_score": 0.94
+          },
+          "pricing": {
+            "cost_per_image": 0.08,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "maximum_quality",
+              "commercial",
+              "print_ready"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true,
+            "upscaling": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 20,
+              "requests_per_day": 300
+            },
+            "known_issues": [
+              "Higher costs",
+              "Longer generation times"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        }
+      },
+      "estimated_generation_time": 2
+    },
+    "enhancement_insights": {
+      "quality_improvements": [
+        "The prompt is extremely vague and will likely produce a wide variety of generic car images.",
+        "The lack of specificity limits the AI's ability to generate a targeted and compelling image.",
+        "By adding details about the car type, environment, lighting, style, and composition, the user can significantly improve the quality and relevance of the generated image.",
+        "Considering the 'social' quality tier and general platform, the image should be visually appealing and easily understandable without requiring expert knowledge.",
+        "Combined 'Indoor Studio' and 'Cinematic' into 'cinematic studio shot' for conciseness.",
+        "Used 'sense of movement' instead of 'Dynamic Movement' for better flow.",
+        "'car' remains as the core subject.",
+        "Prioritized a concise and evocative prompt over a lengthy, descriptive one, following quality over quantity guideline.",
+        "Muted colors encapsulates color preference.",
+        "Ideogram v3 excels at text rendering, so emphasizing 'cinematic' within the prompt helps ensure clear depiction of any text elements (e.g., car branding).",
+        "The model's strength in photorealism and graphic design is leveraged by explicitly including those keywords.",
+        "Using aspect ratio '--ar 16:9' directly in the prompt is generally more effective than post-processing resizing.",
+        "While 'sense of movement' is abstract, combining it with 'dynamic diagonal composition' and 'expressive' style provides stronger directional cues for the model.",
+        "The 'muted colors' keyword helps avoid overly vibrant or saturated outputs, aligning with the desired cinematic aesthetic.",
+        "1:1 aspect ratio chosen for optimal display on various social media platforms.",
+        "Prompt engineered for shareability and save-worthiness by tapping into aspiration ('Dream car achieved?') and personalization ('YOUR dream car').",
+        "Emphasis on high-quality visuals ('photorealistic, high detail, sharp focus') to cater to platform algorithm preferences for visually appealing content.",
+        "Marketing elements incorporated through implied call to action and trend mention to boost engagement and virality.",
+        "Negative prompt crafted to eliminate potential flaws and ensure high-quality output aligned with the 'social' quality tier.",
+        "Model parameter --v 5 added to leverage the latest model version for enhanced image generation capabilities.",
+        "The prompt exhibits a good balance of creative direction and technical specifications.",
+        "Some redundancy exists and the phrasing could be more concise.",
+        "The creative vision is clear, but could benefit from more specific artistic details.",
+        "Platform appropriateness is assumed to be for a visually-based generative model, likely Midjourney or Stable Diffusion, due to the technical specifications used, but it could be explicitly stated.",
+        "The aspect ratio is well-defined, and styling cues are present."
+      ],
+      "processing_time": 46048,
+      "quality_score": 7.5,
+      "used_prompts": [
+        "content_analyzer",
+        "context_integrator",
+        "model_optimizer",
+        "platform_optimizer",
+        "quality_validator"
+      ]
+    }
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:32:23.307Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 3,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": true,
+    "context_answers_count": 5,
+    "context_answers_keys": [
+      "environment_setting",
+      "overall_style",
+      "color_preference",
+      "additional_elements",
+      "composition_focus"
+    ],
+    "has_session_id": true
+  },
+  "sessionId": "session_1756855943006",
+  "debug": {
+    "context_answers": {
+      "environment_setting": "Indoor Studio",
+      "overall_style": "Cinematic",
+      "color_preference": "Muted & Subtle",
+      "additional_elements": [
+        "Dynamic Movement"
+      ],
+      "composition_focus": "Dynamic Diagonal"
+    },
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:33:01.981Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_used": true
+  },
+  "output": {
+    "model_selected": "Ideogram v3",
+    "estimated_cost": 0.008,
+    "primary_prompt_length": 27,
+    "negative_prompt_length": 41,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_video_sequence": false,
+    "video_clips_count": 0,
+    "has_storyboard": false,
+    "has_consistency_profile": false,
+    "has_enhancement_insights": true,
+    "compatibility_score": 1,
+    "processing_time": 38675
+  },
+  "sessionId": "session_1756855943006",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Matches your social quality requirements",
+        "Excellent text rendering capabilities",
+        "Fast generation time (~2s)",
+        "High reliability (95% success rate)",
+        "Cost-effective pricing ($0.008 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "qwen-image",
+          "name": "Qwen Image",
+          "provider": "Alibaba Cloud",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "high"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 3,
+            "queue_priority": "medium",
+            "reliability_score": 0.92,
+            "consistency_score": 0.85
+          },
+          "pricing": {
+            "cost_per_image": 0.012,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "text_rendering",
+              "multilingual",
+              "detailed_scenes"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "illustrated"
+            ],
+            "platform_optimized": [
+              "general"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": true,
+            "style_transfer": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence"
+            ],
+            "known_issues": [
+              "Occasional text distortion in complex scenes"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-12-01",
+            "api_version": "2.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4-ultra",
+          "name": "Imagen 4 Ultra",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 3000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "2048x2048",
+            "quality_levels": [
+              "high",
+              "ultra",
+              "maximum"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 8,
+            "queue_priority": "low",
+            "reliability_score": 0.97,
+            "consistency_score": 0.94
+          },
+          "pricing": {
+            "cost_per_image": 0.08,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "maximum_quality",
+              "commercial",
+              "print_ready"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true,
+            "upscaling": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 20,
+              "requests_per_day": 300
+            },
+            "known_issues": [
+              "Higher costs",
+              "Longer generation times"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        }
+      },
+      "estimated_generation_time": 2
+    },
+    "enhancement_insights": {
+      "quality_improvements": [
+        "Used fallback enhancement due to LLM service failure"
+      ],
+      "processing_time": 38671,
+      "quality_score": 6,
+      "used_prompts": [
+        "fallback"
+      ]
+    }
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:33:58.181Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 3,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "tiktok",
+      "style": "photorealistic",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    },
+    "context_answers_provided": true,
+    "context_answers_count": 5,
+    "context_answers_keys": [
+      "environment_setting",
+      "tiktok_hook",
+      "overall_style",
+      "color_preference",
+      "additional_elements"
+    ],
+    "has_session_id": true
+  },
+  "sessionId": "session_1756856038029",
+  "debug": {
+    "context_answers": {
+      "environment_setting": "Abstract Background",
+      "tiktok_hook": "Trending Element",
+      "overall_style": "Artistic & Stylized",
+      "color_preference": "Cool Tones",
+      "additional_elements": [
+        "Dramatic Lighting"
+      ]
+    },
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:34:42.133Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "tiktok",
+      "style": "photorealistic",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    },
+    "context_answers_used": true
+  },
+  "output": {
+    "model_selected": "Ideogram v3",
+    "estimated_cost": 0.008,
+    "primary_prompt_length": 359,
+    "negative_prompt_length": 266,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_video_sequence": false,
+    "video_clips_count": 0,
+    "has_storyboard": false,
+    "has_consistency_profile": false,
+    "has_enhancement_insights": true,
+    "compatibility_score": 1,
+    "processing_time": 43951
+  },
+  "sessionId": "session_1756856038029",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Excellent text rendering capabilities",
+        "Fast generation time (~2s)",
+        "High reliability (95% success rate)",
+        "Cost-effective pricing ($0.008 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "qwen-image",
+          "name": "Qwen Image",
+          "provider": "Alibaba Cloud",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "high"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 3,
+            "queue_priority": "medium",
+            "reliability_score": 0.92,
+            "consistency_score": 0.85
+          },
+          "pricing": {
+            "cost_per_image": 0.012,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "text_rendering",
+              "multilingual",
+              "detailed_scenes"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "illustrated"
+            ],
+            "platform_optimized": [
+              "general"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": true,
+            "style_transfer": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence"
+            ],
+            "known_issues": [
+              "Occasional text distortion in complex scenes"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-12-01",
+            "api_version": "2.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4-ultra",
+          "name": "Imagen 4 Ultra",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 3000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "2048x2048",
+            "quality_levels": [
+              "high",
+              "ultra",
+              "maximum"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 8,
+            "queue_priority": "low",
+            "reliability_score": 0.97,
+            "consistency_score": 0.94
+          },
+          "pricing": {
+            "cost_per_image": 0.08,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "maximum_quality",
+              "commercial",
+              "print_ready"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true,
+            "upscaling": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 20,
+              "requests_per_day": 300
+            },
+            "known_issues": [
+              "Higher costs",
+              "Longer generation times"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        }
+      },
+      "estimated_generation_time": 2
+    },
+    "enhancement_insights": {
+      "quality_improvements": [
+        "The prompt 'cat' is too generic for a production-quality image on TikTok.  While simple, it lacks the necessary details to guide the AI towards generating a visually appealing and engaging image.",
+        "TikTok users favor dynamic and eye-catching content.  A static image of a generic cat is unlikely to perform well.",
+        "Photorealism requires high detail and specificity in the prompt.  The current prompt offers no guidance on the cat's appearance or the overall scene.",
+        "Consider incorporating elements relevant to TikTok trends and challenges to maximize engagement.",
+        "Combined \"Artistic & Stylized\" and \"Abstract Background\" for a concise visual description.",
+        "Integrated \"Cool Tones\" directly with the lighting description.",
+        "Included \"Trending Element\" and specified TikTok to maintain the intended platform relevance.",
+        "Used \"cat\" as the subject, allowing for flexibility in breed, pose, etc., as these were missing elements and not specified by the user.",
+        "Prioritized a concise prompt, allowing the image generation model creative freedom within the specified parameters.",
+        "Ideogram v3 excels at typography and text-heavy images, but the prompt focuses on its other strength: photorealistic graphic design.  The hashtags help guide the model's image generation process.",
+        "The '/imagine' keyword enhances image generation quality on Ideogram v3.",
+        "Consistency anchors provide a foundation for maintaining visual coherence across multiple generations, useful if this prompt is used for a series of images or a video.",
+        "Avoiding overly complex or ambiguous descriptions leverages the model's current strengths and minimizes potential misinterpretations.",
+        "The 'trending on TikTok' phrase attempts to tap into the model's knowledge of current trends, although its effectiveness may vary.",
+        "TikTok prefers authentic and engaging content, hence the casual tone and call to action.",
+        "Visual appeal is prioritized, so the prompt emphasizes 'stylish' and 'aesthetic' elements.",
+        "Hashtags are crucial for discoverability, so relevant and trending tags were added.",
+        "The 1:1 aspect ratio is maintained for optimal viewing on the platform.",
+        "The call to action about music encourages user participation and community interaction, boosting engagement.",
+        "Negative prompt refines the output by excluding undesirable characteristics, improving the final image quality.",
+        "Creative vision is clear and engaging, effectively blending graphic design and photorealism.",
+        "Platform alignment is strong, leveraging relevant hashtags for TikTok and other social media.",
+        "Call to action is clear and encourages engagement.",
+        "Some redundancy exists in stylistic descriptions.",
+        "Technical specifications could be more detailed for image generation.",
+        "Music suggestion request is slightly disconnected from the core visual prompt."
+      ],
+      "processing_time": 43945,
+      "quality_score": 7.5,
+      "used_prompts": [
+        "content_analyzer",
+        "context_integrator",
+        "model_optimizer",
+        "platform_optimizer",
+        "quality_validator"
+      ]
+    }
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:41:23.653Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 19,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "instagram",
+      "style": "cinematic",
+      "aspectRatio": "16:9",
+      "qualityTier": "production"
+    },
+    "context_answers_provided": true,
+    "context_answers_count": 2,
+    "context_answers_keys": [
+      "mood",
+      "colors"
+    ],
+    "has_session_id": false
+  },
+  "sessionId": "enhance_1756856483653_jb9ai0uro",
+  "debug": {
+    "context_answers": {
+      "mood": "peaceful",
+      "colors": "warm"
+    },
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:42:03.993Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 19,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "instagram",
+      "style": "cinematic",
+      "aspectRatio": "16:9",
+      "qualityTier": "production"
+    },
+    "context_answers_used": true
+  },
+  "output": {
+    "model_selected": "Imagen 4 Fast",
+    "estimated_cost": 0.04,
+    "primary_prompt_length": 445,
+    "negative_prompt_length": 255,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_video_sequence": false,
+    "video_clips_count": 0,
+    "has_storyboard": false,
+    "has_consistency_profile": false,
+    "has_enhancement_insights": true,
+    "compatibility_score": 1,
+    "processing_time": 40341
+  },
+  "sessionId": "enhance_1756856483653_jb9ai0uro",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Matches your production quality requirements",
+        "Superior character consistency across generations",
+        "Fast generation time (~3s)",
+        "High reliability (96% success rate)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        },
+        "faster": {
+          "id": "ideogram-v3",
+          "name": "Ideogram v3",
+          "provider": "Ideogram",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 3,
+              "max_length": 1500,
+              "supports_structured": false
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "turbo"
+            ],
+            "batch_support": true
+          },
+          "performance": {
+            "generation_time_estimate": 2,
+            "queue_priority": "high",
+            "reliability_score": 0.95,
+            "consistency_score": 0.88
+          },
+          "pricing": {
+            "cost_per_image": 0.008,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "typography",
+              "logos",
+              "text_heavy"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "graphic_design"
+            ],
+            "platform_optimized": [
+              "instagram",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": false,
+            "style_transfer": false
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 60,
+              "requests_per_day": 1000
+            }
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-15",
+            "api_version": "3.0"
+          }
+        }
+      },
+      "estimated_generation_time": 3
+    },
+    "enhancement_insights": {
+      "quality_improvements": [
+        "The prompt is too generic for a production-quality image on Instagram. 'Beautiful' is subjective and provides no concrete direction to the AI. The 'cinematic' style request is also vague. To generate a compelling image, the prompt needs significantly more detail and specificity across all assessed categories.",
+        "Consider the target audience on Instagram. What kind of landscapes are popular? What visual styles resonate with users?",
+        "Adding specific details will not only improve the quality of the generated image but also make it more unique and memorable.",
+        "'Beautiful' from the base prompt was kept as it complements 'peaceful' and sets a positive tone.",
+        "Instead of just stating 'warm colors', the prompt suggests 'golden hour' to provide a more evocative image and link to the lighting. 'Soft, diffused lighting' further enhances the peaceful mood.",
+        "The meadow suggestion offers a concrete landscape feature while still allowing creative freedom. The wide angle suggestion enhances the sense of expansiveness and peace.",
+        "Redundancy was avoided by not explicitly mentioning 'mood' or 'atmosphere' after integrating 'peaceful' and 'tranquility'.",
+        "Used 'ultra photorealistic' to leverage Imagen 4 Fast's strength in photorealism.",
+        "Specified 'wide-angle shot' to explicitly control the composition and emphasize the expansive feel.",
+        "Emphasized 'golden hour' and 'soft, diffused lighting' to further enhance the warm, tranquil atmosphere and guide the model towards the desired color palette.",
+        "Added 'cinematic glow' to capitalize on the model's ability to produce visually stunning and commercially appealing imagery.",
+        "Defined style and environment anchors for potential future iterations and expansions of the image, ensuring consistency if used in a video sequence or series.",
+        "Avoided overly complex or abstract descriptions, as Imagen 4 Fast excels at generating realistic scenes based on clear and concise instructions.",
+        "Leveraging golden hour lighting and natural landscapes caters to popular Instagram aesthetics and themes.",
+        "The inclusion of a path leading into the distance taps into the psychology of wanderlust and encourages viewers to imagine themselves in the scene.",
+        "Hashtags like #goldenhour, #meadow, #travel, #peaceful, and #nature increase discoverability and reach within relevant communities.",
+        "Focusing on a captivating foreground element and adding leading lines creates a more engaging composition that draws the viewer's eye.",
+        "The subtle cinematic glow enhances the professional quality of the image and adds a touch of magic, aligning with Instagram's preference for visually appealing content.",
+        "The prompt effectively conveys a strong creative vision with vivid descriptions like 'ultra-photorealistic,' 'soft, diffused lighting,' and 'cinematic glow.'",
+        "Good use of hashtags for platform discoverability (assuming Instagram, Pinterest, or similar).",
+        "Foreground focus and path suggestion enhance depth and narrative.",
+        "Minor redundancy exists ('peaceful' and 'tranquil' convey similar moods).",
+        "While 'golden hour' is understood, specifying time of day (e.g., 'sunset') could enhance predictability for some models."
+      ],
+      "processing_time": 40335,
+      "quality_score": 8.5,
+      "used_prompts": [
+        "content_analyzer",
+        "context_integrator",
+        "model_optimizer",
+        "platform_optimizer",
+        "quality_validator"
+      ]
+    }
+  }
+}
+

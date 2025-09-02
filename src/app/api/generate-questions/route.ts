@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { QuestionGenerator } from '@/lib/question-generator'
+import { LLMQuestionGenerator } from '@/lib/llm-question-generator'
 import { QuestionGenerationRequest, QuestionGenerationResponse } from '@/types/context-questions'
 import { logger } from '@/lib/logger'
 
@@ -76,8 +77,49 @@ export async function POST(request: NextRequest) {
       sessionId
     })
 
-    // Generate questions using the QuestionGenerator
-    const result = QuestionGenerator.generateQuestions(body)
+    // Check if LLM generation is requested via header or use smart generation
+    const useLLM = request.headers.get('X-Use-LLM') === 'true' || 
+                   request.headers.get('X-Generation-Method') === 'llm'
+    
+    let result: any
+    let generationMethod: string
+    
+    if (useLLM) {
+      // Use LLM-powered generation
+      console.log(`🧠 [Generate Questions API] ${sessionId} - Using LLM-powered question generation`)
+      const llmGenerator = new LLMQuestionGenerator()
+      const llmResult = await llmGenerator.generateQuestions(body)
+      
+      result = {
+        questions: llmResult.questions,
+        reasoning: llmResult.reasoning,
+        estimated_improvement: llmResult.estimated_improvement
+      }
+      generationMethod = llmResult.generation_method
+      
+      console.log(`✅ [Generate Questions API] ${sessionId} - LLM generation completed:`, {
+        method: generationMethod,
+        confidence_score: llmResult.confidence_score,
+        questions_count: llmResult.questions.length
+      })
+    } else {
+      // Use smart hybrid generation (recommended)
+      console.log(`🤖 [Generate Questions API] ${sessionId} - Using smart hybrid question generation`)
+      const smartResult = await LLMQuestionGenerator.generateSmartQuestions(body)
+      
+      result = {
+        questions: smartResult.questions,
+        reasoning: smartResult.reasoning,
+        estimated_improvement: smartResult.estimated_improvement
+      }
+      generationMethod = smartResult.generation_method
+      
+      console.log(`✅ [Generate Questions API] ${sessionId} - Smart generation completed:`, {
+        method: generationMethod,
+        confidence_score: smartResult.confidence_score,
+        questions_count: smartResult.questions.length
+      })
+    }
     
     const processingTime = Date.now() - startTime
 
@@ -92,7 +134,8 @@ export async function POST(request: NextRequest) {
         question_categories: result.questions.map(q => q.category),
         reasoning_count: result.reasoning.length,
         estimated_improvement: result.estimated_improvement,
-        processing_time: processingTime
+        processing_time: processingTime,
+        generation_method: generationMethod
       },
       sessionId,
       debug: {
@@ -113,7 +156,8 @@ export async function POST(request: NextRequest) {
         questions: result.questions,
         reasoning: result.reasoning,
         estimated_improvement: result.estimated_improvement,
-        processing_time: processingTime
+        processing_time: processingTime,
+        generation_method: generationMethod
       }
     } as QuestionGenerationResponse
 

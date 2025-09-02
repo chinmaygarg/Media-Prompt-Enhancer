@@ -475,6 +475,713 @@ export const ENHANCED_MODEL_DATABASE: Record<string, ModelCapabilities> = {
     }
   },
 
+  // ===== 2025 CUTTING-EDGE MODELS =====
+  
+  // OpenAI Sora (2025)
+  'sora-turbo': {
+    id: 'sora-turbo',
+    name: 'Sora Turbo',
+    provider: 'OpenAI',
+    type: 'video',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 10,
+        max_length: 4000,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 1,
+        required: false,
+        formats: ['jpg', 'jpeg', 'png', 'webp'],
+        max_resolution: '1920x1080'
+      }
+    },
+    output_capabilities: {
+      max_duration: 20,
+      audio_generation: false,
+      aspect_ratios: ['16:9', '9:16', '1:1', '4:5', '2:3', '3:2'],
+      max_resolution: '1080p',
+      quality_levels: ['standard', 'high', 'ultra'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 60,
+      queue_priority: 'low',
+      reliability_score: 0.85,
+      consistency_score: 0.78
+    },
+    pricing: {
+      cost_per_second: 0.15,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'production',
+      best_for: ['artistic', 'experimental', 'surreal'],
+      style_strength: ['photorealistic', 'artistic'],
+      platform_optimized: ['youtube', 'instagram']
+    },
+    special_features: {
+      text_rendering: 'fair',
+      character_consistency: 'fair',
+      multilingual_support: true,
+      style_transfer: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence', 'copyrighted', 'public_figures'],
+      rate_limits: {
+        requests_per_minute: 3,
+        requests_per_day: 50
+      },
+      known_issues: ['Physics simulation inconsistencies', 'Character consistency challenges in longer clips']
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2025-01-01',
+      api_version: '1.0'
+    }
+  },
+
+  // Runway Gen-4 (2025)
+  'runway-gen4': {
+    id: 'runway-gen4',
+    name: 'Runway Gen-4',
+    provider: 'Runway ML',
+    type: 'video',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 2500,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 1,
+        required: false,
+        formats: ['jpg', 'jpeg', 'png', 'webp'],
+        max_resolution: '1920x1080'
+      }
+    },
+    output_capabilities: {
+      max_duration: 10,
+      audio_generation: false,
+      aspect_ratios: ['16:9', '9:16', '1:1', '4:5'],
+      max_resolution: '1080p',
+      quality_levels: ['standard', 'high'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 35,
+      queue_priority: 'medium',
+      reliability_score: 0.93,
+      consistency_score: 0.91
+    },
+    pricing: {
+      cost_per_second: 0.16,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'production',
+      best_for: ['cinematic', 'character_consistency', 'physics_simulation'],
+      style_strength: ['photorealistic'],
+      platform_optimized: ['youtube', 'instagram', 'tiktok']
+    },
+    special_features: {
+      text_rendering: 'good',
+      character_consistency: 'excellent',
+      multilingual_support: true,
+      style_transfer: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence'],
+      rate_limits: {
+        requests_per_minute: 6,
+        requests_per_day: 200
+      },
+      known_issues: ['Occasional motion blur in fast movements']
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-12-15',
+      api_version: '4.0'
+    }
+  },
+
+  'runway-gen4-turbo': {
+    id: 'runway-gen4-turbo',
+    name: 'Runway Gen-4 Turbo',
+    provider: 'Runway ML',
+    type: 'video',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 2000,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 1,
+        required: false,
+        formats: ['jpg', 'jpeg', 'png', 'webp'],
+        max_resolution: '1920x1080'
+      }
+    },
+    output_capabilities: {
+      max_duration: 10,
+      audio_generation: false,
+      aspect_ratios: ['16:9', '9:16', '1:1', '4:5'],
+      max_resolution: '1080p',
+      quality_levels: ['standard', 'turbo'],
+      batch_support: true
+    },
+    performance: {
+      generation_time_estimate: 20,
+      queue_priority: 'high',
+      reliability_score: 0.95,
+      consistency_score: 0.88
+    },
+    pricing: {
+      cost_per_second: 0.067,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'production',
+      best_for: ['fast_turnaround', 'social_media', 'iterations'],
+      style_strength: ['photorealistic'],
+      platform_optimized: ['tiktok', 'instagram', 'youtube']
+    },
+    special_features: {
+      text_rendering: 'good',
+      character_consistency: 'excellent',
+      multilingual_support: true,
+      style_transfer: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence'],
+      rate_limits: {
+        requests_per_minute: 10,
+        requests_per_day: 500
+      }
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-12-15',
+      api_version: '4.0'
+    }
+  },
+
+  // Kling 2.1 Master (2025)
+  'kling-2.1': {
+    id: 'kling-2.1',
+    name: 'Kling 2.1 Master',
+    provider: 'Kuaishou',
+    type: 'video',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 3000,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 1,
+        required: false,
+        formats: ['jpg', 'jpeg', 'png', 'webp'],
+        max_resolution: '1920x1080'
+      }
+    },
+    output_capabilities: {
+      max_duration: 10,
+      audio_generation: false,
+      aspect_ratios: ['16:9', '9:16', '1:1', '4:5', '3:4'],
+      max_resolution: '1080p',
+      quality_levels: ['standard', 'high', 'master'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 40,
+      queue_priority: 'medium',
+      reliability_score: 0.92,
+      consistency_score: 0.94
+    },
+    pricing: {
+      cost_per_second: 0.25,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'production',
+      best_for: ['character_consistency', 'detailed_scenes', 'premium_quality'],
+      style_strength: ['photorealistic', 'artistic'],
+      platform_optimized: ['youtube', 'instagram']
+    },
+    special_features: {
+      text_rendering: 'excellent',
+      character_consistency: 'excellent',
+      multilingual_support: true,
+      style_transfer: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence', 'political'],
+      rate_limits: {
+        requests_per_minute: 4,
+        requests_per_day: 100
+      },
+      known_issues: ['Higher costs for premium quality', 'Longer generation times']
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-11-30',
+      api_version: '2.1'
+    }
+  },
+
+  // Enhanced Alibaba Wan 2.2 Models (2025)
+  'wan-2.2-flash': {
+    id: 'wan-2.2-flash',
+    name: 'Wan 2.2 Flash',
+    provider: 'Alibaba Cloud',
+    type: 'image',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 1500,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 0,
+        required: false,
+        formats: []
+      }
+    },
+    output_capabilities: {
+      aspect_ratios: ['1:1', '16:9', '9:16', '4:5', '3:4', '4:3'],
+      max_resolution: '1024x1024',
+      quality_levels: ['standard', 'high'],
+      batch_support: true
+    },
+    performance: {
+      generation_time_estimate: 2,
+      queue_priority: 'high',
+      reliability_score: 0.94,
+      consistency_score: 0.87
+    },
+    pricing: {
+      cost_per_image: 0.025,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'social',
+      best_for: ['fast_generation', 'iterations', 'social_media'],
+      style_strength: ['photorealistic', 'illustrated'],
+      platform_optimized: ['instagram', 'tiktok']
+    },
+    special_features: {
+      text_rendering: 'excellent',
+      character_consistency: 'good',
+      multilingual_support: true,
+      style_transfer: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence'],
+      rate_limits: {
+        requests_per_minute: 30,
+        requests_per_day: 1000
+      }
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-12-01',
+      api_version: '2.2'
+    }
+  },
+
+  'wan-2.2-plus': {
+    id: 'wan-2.2-plus',
+    name: 'Wan 2.2 Plus',
+    provider: 'Alibaba Cloud',
+    type: 'image',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 2500,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 0,
+        required: false,
+        formats: []
+      }
+    },
+    output_capabilities: {
+      aspect_ratios: ['1:1', '16:9', '9:16', '4:5', '3:4', '4:3', '2:3', '3:2'],
+      max_resolution: '1536x1536',
+      quality_levels: ['standard', 'high', 'ultra'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 5,
+      queue_priority: 'medium',
+      reliability_score: 0.95,
+      consistency_score: 0.92
+    },
+    pricing: {
+      cost_per_image: 0.05,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'production',
+      best_for: ['high_quality', 'detailed_scenes', 'commercial'],
+      style_strength: ['photorealistic', 'illustrated'],
+      platform_optimized: ['youtube', 'linkedin']
+    },
+    special_features: {
+      text_rendering: 'excellent',
+      character_consistency: 'excellent',
+      multilingual_support: true,
+      style_transfer: true,
+      upscaling: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence'],
+      rate_limits: {
+        requests_per_minute: 20,
+        requests_per_day: 500
+      }
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-12-01',
+      api_version: '2.2'
+    }
+  },
+
+  'wan-2.2-t2v': {
+    id: 'wan-2.2-t2v',
+    name: 'Wan 2.2 Text-to-Video',
+    provider: 'Alibaba Cloud',
+    type: 'video',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 10,
+        max_length: 2000,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 0,
+        required: false,
+        formats: []
+      }
+    },
+    output_capabilities: {
+      max_duration: 5,
+      audio_generation: false,
+      aspect_ratios: ['16:9', '9:16', '1:1'],
+      max_resolution: '720p',
+      quality_levels: ['standard', 'high'],
+      batch_support: true
+    },
+    performance: {
+      generation_time_estimate: 15,
+      queue_priority: 'high',
+      reliability_score: 0.91,
+      consistency_score: 0.84
+    },
+    pricing: {
+      cost_per_second: 0.02,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'draft',
+      best_for: ['prototyping', 'cost_effective', 'quick_iterations'],
+      style_strength: ['photorealistic'],
+      platform_optimized: ['tiktok', 'instagram']
+    },
+    special_features: {
+      text_rendering: 'good',
+      character_consistency: 'fair',
+      multilingual_support: true,
+      style_transfer: false
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence'],
+      rate_limits: {
+        requests_per_minute: 15,
+        requests_per_day: 200
+      },
+      known_issues: ['Limited to 5 seconds', 'Lower resolution output']
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-12-01',
+      api_version: '2.2'
+    }
+  },
+
+  'wan-2.2-t2v-1080p': {
+    id: 'wan-2.2-t2v-1080p',
+    name: 'Wan 2.2 T2V 1080p',
+    provider: 'Alibaba Cloud',
+    type: 'video',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 10,
+        max_length: 2000,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 0,
+        required: false,
+        formats: []
+      }
+    },
+    output_capabilities: {
+      max_duration: 5,
+      audio_generation: false,
+      aspect_ratios: ['16:9', '9:16', '1:1'],
+      max_resolution: '1080p',
+      quality_levels: ['high', 'ultra'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 25,
+      queue_priority: 'medium',
+      reliability_score: 0.93,
+      consistency_score: 0.88
+    },
+    pricing: {
+      cost_per_second: 0.10,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'social',
+      best_for: ['high_resolution', 'social_media', 'quality_over_speed'],
+      style_strength: ['photorealistic'],
+      platform_optimized: ['instagram', 'youtube']
+    },
+    special_features: {
+      text_rendering: 'excellent',
+      character_consistency: 'good',
+      multilingual_support: true,
+      style_transfer: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence'],
+      rate_limits: {
+        requests_per_minute: 10,
+        requests_per_day: 100
+      }
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-12-01',
+      api_version: '2.2'
+    }
+  },
+
+  'wan-2.2-i2v': {
+    id: 'wan-2.2-i2v',
+    name: 'Wan 2.2 Image-to-Video',
+    provider: 'Alibaba Cloud',
+    type: 'video',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 1500,
+        supports_structured: true
+      },
+      images: {
+        min: 1,
+        max: 1,
+        required: true,
+        formats: ['jpg', 'jpeg', 'png', 'webp'],
+        max_resolution: '1920x1080'
+      }
+    },
+    output_capabilities: {
+      max_duration: 5,
+      audio_generation: false,
+      aspect_ratios: ['16:9', '9:16', '1:1'],
+      max_resolution: '1080p',
+      quality_levels: ['standard', 'high'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 20,
+      queue_priority: 'medium',
+      reliability_score: 0.89,
+      consistency_score: 0.91
+    },
+    pricing: {
+      cost_per_second: 0.015,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'draft',
+      best_for: ['image_animation', 'character_from_image', 'cost_effective'],
+      style_strength: ['photorealistic'],
+      platform_optimized: ['tiktok', 'instagram']
+    },
+    special_features: {
+      text_rendering: 'fair',
+      character_consistency: 'excellent',
+      multilingual_support: true,
+      style_transfer: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence'],
+      rate_limits: {
+        requests_per_minute: 12,
+        requests_per_day: 150
+      },
+      known_issues: ['Best with portrait/character images', 'Limited motion range']
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-12-01',
+      api_version: '2.2'
+    }
+  },
+
+  // Google Imagen 4 Models (2025)
+  'imagen-4-fast': {
+    id: 'imagen-4-fast',
+    name: 'Imagen 4 Fast',
+    provider: 'Google',
+    type: 'image',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 2000,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 0,
+        required: false,
+        formats: []
+      }
+    },
+    output_capabilities: {
+      aspect_ratios: ['1:1', '16:9', '9:16', '4:5', '3:2', '2:3'],
+      max_resolution: '1536x1536',
+      quality_levels: ['standard', 'high'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 3,
+      queue_priority: 'high',
+      reliability_score: 0.96,
+      consistency_score: 0.89
+    },
+    pricing: {
+      cost_per_image: 0.04,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'production',
+      best_for: ['fast_turnaround', 'iterations', 'commercial'],
+      style_strength: ['photorealistic'],
+      platform_optimized: ['youtube', 'linkedin', 'instagram']
+    },
+    special_features: {
+      text_rendering: 'good',
+      character_consistency: 'excellent',
+      multilingual_support: false,
+      style_transfer: true,
+      inpainting: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence', 'copyrighted'],
+      rate_limits: {
+        requests_per_minute: 30,
+        requests_per_day: 500
+      }
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-11-30',
+      api_version: '4.0'
+    }
+  },
+
+  'imagen-4-ultra': {
+    id: 'imagen-4-ultra',
+    name: 'Imagen 4 Ultra',
+    provider: 'Google',
+    type: 'image',
+    input_requirements: {
+      text: {
+        required: true,
+        min_length: 5,
+        max_length: 3000,
+        supports_structured: true
+      },
+      images: {
+        min: 0,
+        max: 0,
+        required: false,
+        formats: []
+      }
+    },
+    output_capabilities: {
+      aspect_ratios: ['1:1', '16:9', '9:16', '4:5', '3:2', '2:3', '3:4', '4:3'],
+      max_resolution: '2048x2048',
+      quality_levels: ['high', 'ultra', 'maximum'],
+      batch_support: false
+    },
+    performance: {
+      generation_time_estimate: 8,
+      queue_priority: 'low',
+      reliability_score: 0.97,
+      consistency_score: 0.94
+    },
+    pricing: {
+      cost_per_image: 0.08,
+      currency: 'USD'
+    },
+    classification: {
+      quality_tier: 'production',
+      best_for: ['maximum_quality', 'commercial', 'print_ready'],
+      style_strength: ['photorealistic'],
+      platform_optimized: ['youtube', 'linkedin']
+    },
+    special_features: {
+      text_rendering: 'excellent',
+      character_consistency: 'excellent',
+      multilingual_support: false,
+      style_transfer: true,
+      inpainting: true,
+      upscaling: true
+    },
+    limitations: {
+      content_filters: ['nsfw', 'violence', 'copyrighted'],
+      rate_limits: {
+        requests_per_minute: 20,
+        requests_per_day: 300
+      },
+      known_issues: ['Higher costs', 'Longer generation times']
+    },
+    status: {
+      availability: 'stable',
+      last_updated: '2024-11-30',
+      api_version: '4.0'
+    }
+  },
+
   // IMAGE+TEXT-TO-VIDEO MODELS
   'hailuo-02': {
     id: 'hailuo-02',

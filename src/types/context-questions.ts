@@ -47,6 +47,7 @@ export interface QuestionGenerationResponse {
     reasoning: string[]
     estimated_improvement: string
     processing_time: number
+    generation_method?: string
   }
   error?: string
 }

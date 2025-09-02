@@ -356,3 +356,991 @@
   }
 }
 
+{
+  "timestamp": "2025-09-02T23:11:42.094Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 5,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 2,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756854702092_u0fghm26f",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "connection": "keep-alive",
+      "content-length": "398",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T23:11:42.094Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:11:42.095Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "a cat",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "text_elements": [
+      {
+        "id": "text_1756854668224_khkrfhhwh",
+        "text": "binny",
+        "type": "overlay",
+        "position": {
+          "x": 50,
+          "y": 50,
+          "anchor": "top-left"
+        }
+      },
+      {
+        "id": "text_1756854681055_vakjfe0sm",
+        "text": "loca",
+        "type": "in-video",
+        "context": "paper"
+      }
+    ]
+  },
+  "sessionId": "generate_1756854702092_u0fghm26f"
+}
+
+{
+  "timestamp": "2025-09-02T23:11:42.096Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 5,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "style",
+      "style",
+      "content",
+      "composition"
+    ],
+    "reasoning_count": 2,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 4
+  },
+  "sessionId": "generate_1756854702092_u0fghm26f",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "composition_focus",
+        "question": "What should be the main focal point?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "composition",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:24:36.508Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756855476508_qxnglrwhk",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "cache-control": "no-cache",
+      "connection": "keep-alive",
+      "content-length": "173",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T23:24:36.508Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:24:36.509Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "car",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "sessionId": "generate_1756855476508_qxnglrwhk"
+}
+
+{
+  "timestamp": "2025-09-02T23:24:36.510Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "style",
+      "style",
+      "content",
+      "composition"
+    ],
+    "reasoning_count": 2,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 2
+  },
+  "sessionId": "generate_1756855476508_qxnglrwhk",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "composition_focus",
+        "question": "What should be the main focal point?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "composition",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:30:35.174Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 49,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "instagram",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": false
+  },
+  "sessionId": "generate_1756855835173_vjnazbmd6",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "content-length": "248",
+      "content-type": "application/json",
+      "host": "localhost:3000",
+      "user-agent": "curl/8.7.1",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http",
+      "x-generation-method": "llm"
+    },
+    "timestamp": "2025-09-02T23:30:35.174Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:30:35.175Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "A creative abstract artwork with flowing patterns",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "instagram",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    }
+  },
+  "sessionId": "generate_1756855835173_vjnazbmd6"
+}
+
+{
+  "timestamp": "2025-09-02T23:30:46.737Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 49,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "instagram",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "style",
+      "composition",
+      "content",
+      "platform",
+      "style"
+    ],
+    "reasoning_count": 2,
+    "estimated_improvement": "80%",
+    "processing_time": 11564,
+    "generation_method": "llm"
+  },
+  "sessionId": "generate_1756855835173_vjnazbmd6",
+  "debug": {
+    "questions": [
+      {
+        "id": "q1_style",
+        "question": "What artistic style should the artwork emulate?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "high"
+      },
+      {
+        "id": "q2_color_palette",
+        "question": "What color palette should be dominant?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "composition",
+        "importance": "high"
+      },
+      {
+        "id": "q3_dominant_pattern",
+        "question": "What kind of flowing pattern should be emphasized?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "q4_instagram_context",
+        "question": "What is the intended context for Instagram usage?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "platform",
+        "importance": "medium"
+      },
+      {
+        "id": "q5_texture",
+        "question": "What texture should the artwork have?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "low"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:31:08.781Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 10,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "modern",
+      "aspectRatio": "16:9",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": false
+  },
+  "sessionId": "generate_1756855868781_0usyvf676",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "content-length": "210",
+      "content-type": "application/json",
+      "host": "localhost:3000",
+      "user-agent": "curl/8.7.1",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T23:31:08.781Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:31:08.782Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "simple car",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "modern",
+      "aspectRatio": "16:9",
+      "qualityTier": "social"
+    }
+  },
+  "sessionId": "generate_1756855868781_0usyvf676"
+}
+
+{
+  "timestamp": "2025-09-02T23:31:08.791Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 10,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "modern",
+      "aspectRatio": "16:9",
+      "qualityTier": "social"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "style",
+      "style",
+      "content",
+      "composition"
+    ],
+    "reasoning_count": 3,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 10,
+    "generation_method": "rule-based"
+  },
+  "sessionId": "generate_1756855868781_0usyvf676",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "composition_focus",
+        "question": "What should be the main focal point?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "composition",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:33:35.351Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "tiktok",
+      "style": "photorealistic",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756856015351_mjzdhqtik",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "cache-control": "no-cache",
+      "connection": "keep-alive",
+      "content-length": "190",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T23:33:35.351Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:33:35.352Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "cat",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "tiktok",
+      "style": "photorealistic",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    }
+  },
+  "sessionId": "generate_1756856015351_mjzdhqtik"
+}
+
+{
+  "timestamp": "2025-09-02T23:33:35.354Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "tiktok",
+      "style": "photorealistic",
+      "aspectRatio": "1:1",
+      "qualityTier": "production"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "platform",
+      "style",
+      "style",
+      "content"
+    ],
+    "reasoning_count": 4,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 3,
+    "generation_method": "rule-based"
+  },
+  "sessionId": "generate_1756856015351_mjzdhqtik",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "tiktok_hook",
+        "question": "How should this grab TikTok attention?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "platform",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:44:48.657Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 8,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756856688657_sbthxoc2w",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "cache-control": "no-cache",
+      "connection": "keep-alive",
+      "content-length": "178",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T23:44:48.657Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:44:48.658Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "car blue",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "sessionId": "generate_1756856688657_sbthxoc2w"
+}
+
+{
+  "timestamp": "2025-09-02T23:44:48.660Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 8,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "style",
+      "style",
+      "content",
+      "composition"
+    ],
+    "reasoning_count": 3,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 3,
+    "generation_method": "rule-based"
+  },
+  "sessionId": "generate_1756856688657_sbthxoc2w",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "composition_focus",
+        "question": "What should be the main focal point?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "composition",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:46:10.672Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 8,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "has_session_id": true
+  },
+  "sessionId": "generate_1756856770671_hgi6nxg4y",
+  "debug": {
+    "request_headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "cache-control": "no-cache",
+      "connection": "keep-alive",
+      "content-length": "178",
+      "content-type": "application/json",
+      "dnt": "1",
+      "host": "localhost:3000",
+      "origin": "http://localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/",
+      "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "x-forwarded-for": "::1",
+      "x-forwarded-host": "localhost:3000",
+      "x-forwarded-port": "3000",
+      "x-forwarded-proto": "http"
+    },
+    "timestamp": "2025-09-02T23:46:10.672Z"
+  }
+}
+
+{
+  "timestamp": "2025-09-02T23:46:10.673Z",
+  "level": "DEBUG",
+  "component": "GenerateQuestionsAPI",
+  "event": "question_generation_start",
+  "input": {
+    "base_prompt": "car blue",
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "sessionId": "generate_1756856770671_hgi6nxg4y"
+}
+
+{
+  "timestamp": "2025-09-02T23:46:10.674Z",
+  "level": "INFO",
+  "component": "GenerateQuestionsAPI",
+  "event": "questions_generated_successfully",
+  "input": {
+    "base_prompt_length": 8,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    }
+  },
+  "output": {
+    "questions_count": 5,
+    "question_categories": [
+      "content",
+      "style",
+      "style",
+      "content",
+      "composition"
+    ],
+    "reasoning_count": 3,
+    "estimated_improvement": "Notable improvement expected (25-40% enhancement in prompt quality)",
+    "processing_time": 3,
+    "generation_method": "rule-based"
+  },
+  "sessionId": "generate_1756856770671_hgi6nxg4y",
+  "debug": {
+    "questions": [
+      {
+        "id": "environment_setting",
+        "question": "What environment or setting would enhance this?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "high"
+      },
+      {
+        "id": "overall_style",
+        "question": "What visual style would work best?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "color_preference",
+        "question": "What color approach would enhance this?",
+        "type": "single_select",
+        "options_count": 6,
+        "category": "style",
+        "importance": "medium"
+      },
+      {
+        "id": "additional_elements",
+        "question": "What elements would add visual interest?",
+        "type": "multiple_select",
+        "options_count": 5,
+        "category": "content",
+        "importance": "medium"
+      },
+      {
+        "id": "composition_focus",
+        "question": "What should be the main focal point?",
+        "type": "single_select",
+        "options_count": 5,
+        "category": "composition",
+        "importance": "medium"
+      }
+    ]
+  }
+}
+
