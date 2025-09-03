@@ -53,13 +53,8 @@ export class LLMQuestionGenerator {
 
       let result: LLMQuestionResult
 
-      if (complexity.shouldUseLLM) {
-        // Use LLM for complex or unique scenarios
-        result = await this.generateLLMQuestions(request, sessionId)
-      } else {
-        // Fallback to rule-based for simple scenarios
-        result = await this.generateFallbackQuestions(request, sessionId)
-      }
+      // Always use LLM generation (rule-based system removed)
+      result = await this.generateLLMQuestions(request, sessionId)
 
       const processingTime = Date.now() - startTime
       result.processing_time = processingTime
@@ -75,10 +70,11 @@ export class LLMQuestionGenerator {
     } catch (error) {
       console.error(`❌ [LLMQuestionGenerator] ${sessionId} - Generation failed:`, error)
       
-      // Always fallback to rule-based on error
+      // Emergency fallback to rule-based only on LLM service errors
+      console.warn(`⚠️ [LLMQuestionGenerator] ${sessionId} - Using emergency rule-based fallback`)
       const fallbackResult = await this.generateFallbackQuestions(request, sessionId)
       fallbackResult.processing_time = Date.now() - startTime
-      fallbackResult.reasoning.unshift('LLM generation failed, using rule-based fallback')
+      fallbackResult.reasoning.unshift('LLM service unavailable, using emergency rule-based fallback')
       
       return fallbackResult
     }
@@ -142,7 +138,7 @@ export class LLMQuestionGenerator {
       factors.push('complex_video_requirements')
     }
 
-    // Determine level and strategy
+    // Determine level and strategy - ALWAYS USE LLM
     let level: 'simple' | 'moderate' | 'complex'
     let shouldUseLLM: boolean
 
@@ -151,10 +147,10 @@ export class LLMQuestionGenerator {
       shouldUseLLM = true
     } else if (complexityScore >= 3) {
       level = 'moderate'
-      shouldUseLLM = true // Use LLM for moderate complexity for better results
+      shouldUseLLM = true
     } else {
       level = 'simple'
-      shouldUseLLM = false // Rule-based is sufficient for simple cases
+      shouldUseLLM = true // Force LLM for all scenarios including simple cases
     }
 
     return { level, shouldUseLLM, factors }

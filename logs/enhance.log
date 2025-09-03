@@ -3024,3 +3024,303 @@
   }
 }
 
+{
+  "timestamp": "2025-09-02T23:59:11.724Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "request_received",
+  "input": {
+    "base_prompt_length": 3,
+    "media_assets_count": 0,
+    "text_elements_count": 0,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_provided": true,
+    "context_answers_count": 5,
+    "context_answers_keys": [
+      "q1_bag_type",
+      "q2_bag_style",
+      "q3_bag_contents",
+      "q4_bag_material",
+      "q5_bag_background"
+    ],
+    "has_session_id": true
+  },
+  "sessionId": "session_1756857551420",
+  "debug": {
+    "context_answers": {
+      "q1_bag_type": "Shopping bag",
+      "q2_bag_style": "Modern",
+      "q3_bag_contents": "Groceries",
+      "q4_bag_material": "Leather",
+      "q5_bag_background": "Studio"
+    },
+    "media_assets_details": [],
+    "text_elements_details": []
+  }
+}
+
+{
+  "timestamp": "2025-09-03T00:00:02.210Z",
+  "level": "INFO",
+  "component": "EnhanceAPI",
+  "event": "enhancement_completed_successfully",
+  "input": {
+    "base_prompt_length": 3,
+    "config": {
+      "outputType": "text-to-image",
+      "platform": "general",
+      "style": "",
+      "aspectRatio": "1:1",
+      "qualityTier": "social"
+    },
+    "context_answers_used": true
+  },
+  "output": {
+    "model_selected": "Ideogram v3",
+    "estimated_cost": 0.008,
+    "primary_prompt_length": 532,
+    "negative_prompt_length": 179,
+    "has_shots": false,
+    "shots_count": 0,
+    "has_video_sequence": false,
+    "video_clips_count": 0,
+    "has_storyboard": false,
+    "has_consistency_profile": false,
+    "has_enhancement_insights": true,
+    "compatibility_score": 1,
+    "processing_time": 50486
+  },
+  "sessionId": "session_1756857551420",
+  "debug": {
+    "model_info": {
+      "compatibility_score": 1,
+      "compatibility_warnings": [],
+      "selection_reasoning": [
+        "Perfect compatibility with your inputs",
+        "Matches your social quality requirements",
+        "Excellent text rendering capabilities",
+        "Fast generation time (~2s)",
+        "High reliability (95% success rate)",
+        "Cost-effective pricing ($0.008 per generation)"
+      ],
+      "alternatives": {
+        "cost_effective": {
+          "id": "qwen-image",
+          "name": "Qwen Image",
+          "provider": "Alibaba Cloud",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 2000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "1024x1024",
+            "quality_levels": [
+              "standard",
+              "high"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 3,
+            "queue_priority": "medium",
+            "reliability_score": 0.92,
+            "consistency_score": 0.85
+          },
+          "pricing": {
+            "cost_per_image": 0.012,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "social",
+            "best_for": [
+              "text_rendering",
+              "multilingual",
+              "detailed_scenes"
+            ],
+            "style_strength": [
+              "photorealistic",
+              "illustrated"
+            ],
+            "platform_optimized": [
+              "general"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "good",
+            "multilingual_support": true,
+            "style_transfer": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence"
+            ],
+            "known_issues": [
+              "Occasional text distortion in complex scenes"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-12-01",
+            "api_version": "2.0"
+          }
+        },
+        "higher_quality": {
+          "id": "imagen-4-ultra",
+          "name": "Imagen 4 Ultra",
+          "provider": "Google",
+          "type": "image",
+          "input_requirements": {
+            "text": {
+              "required": true,
+              "min_length": 5,
+              "max_length": 3000,
+              "supports_structured": true
+            },
+            "images": {
+              "min": 0,
+              "max": 0,
+              "required": false,
+              "formats": []
+            }
+          },
+          "output_capabilities": {
+            "aspect_ratios": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:5",
+              "3:2",
+              "2:3",
+              "3:4",
+              "4:3"
+            ],
+            "max_resolution": "2048x2048",
+            "quality_levels": [
+              "high",
+              "ultra",
+              "maximum"
+            ],
+            "batch_support": false
+          },
+          "performance": {
+            "generation_time_estimate": 8,
+            "queue_priority": "low",
+            "reliability_score": 0.97,
+            "consistency_score": 0.94
+          },
+          "pricing": {
+            "cost_per_image": 0.08,
+            "currency": "USD"
+          },
+          "classification": {
+            "quality_tier": "production",
+            "best_for": [
+              "maximum_quality",
+              "commercial",
+              "print_ready"
+            ],
+            "style_strength": [
+              "photorealistic"
+            ],
+            "platform_optimized": [
+              "youtube",
+              "linkedin"
+            ]
+          },
+          "special_features": {
+            "text_rendering": "excellent",
+            "character_consistency": "excellent",
+            "multilingual_support": false,
+            "style_transfer": true,
+            "inpainting": true,
+            "upscaling": true
+          },
+          "limitations": {
+            "content_filters": [
+              "nsfw",
+              "violence",
+              "copyrighted"
+            ],
+            "rate_limits": {
+              "requests_per_minute": 20,
+              "requests_per_day": 300
+            },
+            "known_issues": [
+              "Higher costs",
+              "Longer generation times"
+            ]
+          },
+          "status": {
+            "availability": "stable",
+            "last_updated": "2024-11-30",
+            "api_version": "4.0"
+          }
+        }
+      },
+      "estimated_generation_time": 2
+    },
+    "enhancement_insights": {
+      "quality_improvements": [
+        "The prompt 'bag' is extremely vague and will likely produce generic and uninteresting results. It lacks essential information needed for the AI to generate a compelling image.",
+        "By adding details like 'a worn leather satchel resting on a vintage wooden table' or 'a vibrant pink tote bag held by a fashionable shopper in a bustling city street', the AI can generate much more specific and visually appealing images.",
+        "Specifying the style (e.g., photorealistic, painting, sketch, abstract) will further guide the AI and improve the results.",
+        "Considering the 'social' quality tier suggests the image is intended for casual sharing. Adding a touch of creativity and visual interest will make it more shareable.",
+        "Combined bag type, style, and material for a concise description. \"Filled with groceries\" specifies the bag's contents and purpose. \"Studio setting\" establishes the environment. Prompted consideration of lighting, color, composition, and camera angle to encourage creative image generation beyond the basic description.",
+        "Ideogram v3 excels at typography and text within images. While this prompt doesn't heavily feature text, the model's precision in rendering details will benefit the overall quality and realism of the bag and groceries.",
+        "The 'social' quality tier suggests a focus on visually appealing content, hence the emphasis on composition, lighting, and color.",
+        "The keywords 'photorealistic' and 'graphic_design' align with the model's style strengths.",
+        "The '/imagine' keyword helps Ideogram v3 focus on the image generation aspect of the prompt.",
+        "Avoiding overly complex descriptions allows the model more creative freedom while adhering to the core concept.",
+        "1:1 aspect ratio is ideal for most social media platforms.",
+        "Hashtags increase discoverability and encourage community participation.",
+        "The open-ended question promotes comments and interaction.",
+        "Juxtaposing high fashion with everyday groceries creates a visually striking and relatable image.",
+        "Added \"--style expressive\" to enhance the artistic and dynamic nature of the image as it aligns with the prompt's high-fashion and dynamic lighting elements. This parameter is example-based and may vary across specific models.",
+        "Strong creative vision with a clear juxtaposition of luxury and everyday life.",
+        "Good use of descriptive adjectives like 'chic,' 'vibrant,' 'dynamic,' and 'luxurious.'",
+        "Effective use of hashtags to convey the theme.",
+        "Slight redundancy in descriptions (e.g., 'vibrant, fresh groceries' could be simplified).",
+        "Missing specific details about the types of groceries, which could limit artistic interpretation and recipe suggestions.",
+        "The prompt blends image generation and recipe ideation, which could lead to unpredictable outputs depending on the platform.",
+        "The ending question about the recipe feels slightly tacked on and could be integrated more smoothly."
+      ],
+      "processing_time": 50481,
+      "quality_score": 7.5,
+      "used_prompts": [
+        "content_analyzer",
+        "context_integrator",
+        "model_optimizer",
+        "platform_optimizer",
+        "quality_validator"
+      ]
+    }
+  }
+}
+
